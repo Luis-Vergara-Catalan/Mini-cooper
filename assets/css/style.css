@@ -1,0 +1,219 @@
+.container{
+    height: 100%;
+    display: grid;
+    grid-template-areas: 
+    "head"
+    "busqueda"
+    "prod"
+    "navegador"
+    "footer";
+    grid-template-columns: 100%;
+    grid-template-rows: 4% 3% 100% 5% 4%;
+}
+
+.head{
+    grid-area: head;
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 0.5rem;
+    gap: 0.5rem;
+    flex-basis: 90%;
+}
+.menu{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.menu-detalle{
+    display: none;
+}
+
+.busqueda{
+    grid-area: busqueda;
+    background-color: rgb(223, 220, 220);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.busqueda-orden{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.precio select{
+    margin-top: 3%;
+    width: 90%;
+}
+.prod{
+    grid-area: productos;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nav{
+    padding-top: 3rem;
+}
+.tarjeta{   
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+.tarjeta h3{
+    text-align: center;
+}
+
+.navegador{
+    grid-area: navegador;
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+    justify-content: center;
+    align-items: center;
+}
+.boton{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+.boton button{
+    border: 1px solid grey;
+}
+button{
+        float: left;
+}
+
+.footer{
+    grid-area: footer;
+    background-color: grey;
+    border: 1px solid transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* tablet*/
+@media(min-width: 576px){
+    .container {
+        height: 100%;
+        width: 100%;
+        grid-auto-columns: 1fr; 
+        grid-template-columns: 20% 80%; 
+        grid-template-rows: 5% 100% 5%; 
+        grid-template-areas: 
+          "head head"
+          "busqueda productos"
+          "footer footer"; 
+    }
+    .head { 
+        grid-area: head; 
+    }
+    .prod{
+        grid-area: productos;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: stretch;
+        flex-wrap: wrap;
+        column-gap: 4%;
+    }
+    .tarjeta{
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 2%;
+        display: flex;
+        margin: 2%;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 3%;       
+    }
+
+    .busqueda { 
+        grid-area: busqueda;
+        justify-content: start;
+        padding-top: 20px;
+    }
+
+    .footer { 
+        grid-area: footer; 
+    }
+    .menu i{
+        display: none;
+    }
+    .menu-detalle{
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+        padding-right: 3rem;
+    }
+    .enlace a{
+        text-decoration: none;
+        color: black;
+    }
+}
+/*escritorio*/
+@media (min-width: 992px){
+    .container {
+        display: grid; 
+        grid-auto-columns: 1fr; 
+        grid-template-columns: 17% 83%; 
+        grid-template-rows: 14% 80% 14%; 
+        grid-template-areas: 
+          "head busqueda"
+          "head productos"
+          "footer productos"; 
+    }
+    .head {
+        grid-area: head;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 8%;
+    }
+    .logo{
+        align-items: start;
+        flex-basis: 0%;
+    }
+    .menu{
+        justify-content: start;
+        padding-top: 10%;
+    }
+    .menu-detalle{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        flex-basis: 87%;
+    }
+      .busqueda { 
+        grid-area: busqueda; 
+    }
+      .footer { 
+        grid-area: footer;
+        padding-left: 30px;
+    }
+      .productos { 
+        grid-area: productos; 
+    }
+
+}
